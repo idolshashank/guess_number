@@ -26,13 +26,19 @@ if (playgame) {
     }
 }
 function validateGuess(guess){
-    if(guess<1 || guess>1000 || isNaN(guess)){
+    if(guess<1 || guess>2000 || isNaN(guess)){
         alert("enter a valid number");
     }
     else{
         preGuess.push(guess);
         if(numGuess==11){
-        display("you have reached maximum guesses. GAME OVER !!");
+            display("you have reached maximum guesses. GAME OVER !!");
+            
+        setTimeout(()=>{
+            display(`Random no is ${randomNumber}`)
+            }
+            ,5000);
+        
         endgame();}
         else{
             displayguess(guess);
@@ -63,7 +69,7 @@ function display(message){
 }
 function endgame(){
     userInp.value = '';
-    // userInp.setAttribute('disabled', '');
+    userInp.setAttribute('disabled', '');
     p.classList.add('button');
     p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
     startOver.appendChild(p);
