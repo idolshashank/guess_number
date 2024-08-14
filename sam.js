@@ -1,4 +1,4 @@
-let randomNumber= parseInt(Math.random()*1000+1);
+let randomNumber= parseInt(Math.random()*2000+1);
 const submit = document.querySelector('#subt');
 console.log(submit);
 const userInp = document.querySelector('#guessField');
